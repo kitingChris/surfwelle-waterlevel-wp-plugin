@@ -17,8 +17,8 @@ add_action('rest_api_init', function () {
       $time = date('H:i:s', strtotime('now'));
       $wl_filename = "waterlevel-$date.json";
 
+      WP_Filesystem(); 
       if (!is_file($wl_dir.$wl_filename)) {
-        WP_Filesystem(); 
         if(!$wp_filesystem->is_dir($dir) )
         {
           $wp_filesystem->mkdir($dir); 
@@ -44,6 +44,7 @@ add_action('rest_api_init', function () {
       $time = date('H:i:s', strtotime('now'));
       $wl_filename = "waterlevel-$date.json";
 
+      WP_Filesystem(); 
       if (!is_file($wl_dir.$wl_filename)) {
         return '{}';
       }
