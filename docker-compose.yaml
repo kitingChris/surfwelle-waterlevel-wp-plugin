@@ -28,6 +28,14 @@ services:
     depends_on:
       - db
 
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8085:80
+    environment:
+      - PMA_ARBITRARY=1
+
 volumes:
   wordpress:
   db:
